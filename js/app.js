@@ -1,4 +1,4 @@
-var app = angular.module('knowMyBlock', ['ui.router']);
+var app = angular.module('knowMyBlock', ['ui.router', 'ui.bootstrap']);
 console.log('in the app');
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
@@ -9,17 +9,16 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     templateUrl: 'views/main.html',
     controller: 'MainCtrl'
   })
-  .state('about', {
+  .state('results', {
     url: '/results',
     templateUrl: 'views/results.html',
     controller: 'ResultsCtrl'
   })
-  .state('contact', {
+  .state('search', {
     url: '/searchCrimes',
-    templateUrl: 'views/searchCrimes.html',
+    templateUrl: 'partials/modal.html',
     controller: 'SearchCrimesCtrl'
   });
-
 }]);
 
 

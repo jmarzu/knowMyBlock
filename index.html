@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +9,24 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap-tpls.js"></script>
+
     <script src="js/app.js"></script>
     <script src="js/MainCtrl.js"></script>
     <script src="js/ResultsCtrl.js"></script>
-    <script src="js/SearchCrimesCtrl.js"></script>    
+    <script src="js/SearchCrimesCtrl.js"></script>
+    <script src="js/modal.js"></script>    
+    <script src="js/dropdownCtrl.js"></script>
+    <script src="js/radioBtnCtrl.js"></script>
+
   </head>
   <body ng-app="knowMyBlock">
-    <h1 class="text-center">Hello World {{2+2}}</h1>
+    <h1 class="title">Know My Block</h1>
     <div class="container">
 
       <ul>
@@ -30,7 +38,7 @@
     </div>
 
 
-  <div ui-view></div>
+  <div class="container" ui-view></div>
     
 
     <!-- jQuery -->

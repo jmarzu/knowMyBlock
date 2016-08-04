@@ -1,5 +1,116 @@
 <h1>results page</h1>
+
+<div id="dropdown" ng-controller="DropdownCtrl">
+    
+    <div class="btn-group" uib-dropdown dropdown-append-to-body>
+      <button id="btn-append-to-body" type="button" class="btn btn-primary" uib-dropdown-toggle>
+        Dropdown on Body <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+        <li role="menuitem"><a href="#">1</a></li>
+        <li role="menuitem"><a href="#">2</a></li>
+        <li role="menuitem"><a href="#">3</a></li>
+        <li role="menuitem"><a href="#">4</a></li>
+        <li role="menuitem"><a href="#">5</a></li>
+        <li role="menuitem"><a href="#">6</a></li>
+        <li role="menuitem"><a href="#">7</a></li>
+        <li role="menuitem"><a href="#">8</a></li>
+        <li role="menuitem"><a href="#">9</a></li>
+        <li role="menuitem"><a href="#">10</a></li>
+        <li role="menuitem"><a href="#">11</a></li>
+        <li role="menuitem"><a href="#">12</a></li>
+      </ul>
+    </div>
+        </div>
+      </div>
+    </div>
+           <form name="myForm" ng-controller="ExampleController">
+              <label>
+                <input type="radio" ng-model="color.name" value="1">
+                1
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" ng-value="2">
+                2
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" value="3">
+                3
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" value="4">
+                4
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" ng-value="5">
+                5
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" value="6">
+                6
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" value="7">
+                7
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" ng-value="8">
+                8
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" value="9">
+                9
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" value="10">
+                10
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" ng-value="11">
+                11
+              </label>
+              <label>
+                <input type="radio" ng-model="color.name" value="12">
+                12
+              </label>
+              <tt>color = {{color.name | json}}</tt><br/>
+           </form>
+
+
+    <!-- <script type="text/ng-template" id="dropdown.html">
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="button-template-url">
+          <li role="menuitem"><a href="#">Action in Template</a></li>
+          <li role="menuitem"><a href="#">Another action in Template</a></li>
+          <li role="menuitem"><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li role="menuitem"><a href="#">Separated link in Template</a></li>
+        </ul>
+    </script> -->
+</div>
+<br>
+<div ng-controller="ModalDemoCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <h3>This modal will be attached to each crime indicent have individual information about each one</h3>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
+</div>
+
+<br>
+
 <div class="well" ng-repeat="data in datas track by $index">
   <h1>{{ data.offense_type }}</h1>
   <h2>{{ data.year }}</h2>
+  <p>Latitude: {{ data.latitude }}, Longitude: {{ data.longitude }}</p>
+  <div ng-include="partials/modal.html"></div>
+
 </div>
