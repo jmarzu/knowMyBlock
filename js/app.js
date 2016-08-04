@@ -1,20 +1,32 @@
-var app = angular.module('knowMyBlock', []);
+var app = angular.module('knowMyBlock', ['ui.router']);
 console.log('in the app');
 
-app.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
-  console.log('in the controller');
-  $http.get('https://data.seattle.gov/resource/y7pv-r3kh.json?', {
-    params: {
-      offense_type: 'ROBBERY-BUSINESS-GUN'
-    }
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider.state('main', {
+    url: '/',
+    templateUrl: 'views/main.html',
+    controller: 'MainCtrl'
   })
-  .then(function success(res) {
-    console.log(res);
-  }, function error(res) {
-    console.log(res);
+  .state('about', {
+    url: '/results',
+    templateUrl: 'views/results.html',
+    controller: 'ResultsCtrl'
   })
+  .state('contact', {
+    url: '/searchCrimes',
+    templateUrl: 'views/searchCrimes.html',
+    controller: 'SearchCrimesCtrl'
+  });
+
 }]);
 
 
 
+
+
+
 // api_token = fXeV8k4r4jweDFGyUNzCQJhVw
+
+// ASSAULT, NARCOTICS, ROBBERY, DUI
